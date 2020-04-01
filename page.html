@@ -38,7 +38,7 @@
             Con p5.js vamos por los datos del JSON, imprimimos en la consola el contenido de la variable que recibe esos datos y lo que sigue se resuelve mediante Leaflet.js. Con un ciclo for() se marcan distintos círculos rojos semiopacos (cuando se ve más rojo es coincidencia de epicentro, porque es un círculo sobre otro), cuyo radio depende del epicentro multiplicándose por 25000 (que no es lo más adecuado porque las magnitudes no implican crecimiento lineal sino exponencial)
             */
 
-            var miMapa = L.map('mapamundi').setView([-70, -30], 4);
+            var miMapa = L.map('mapamundi').setView([50, 30], 4);
 
             L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
                 minZoom:2,
