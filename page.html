@@ -42,7 +42,7 @@
 
             L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
                 minZoom:2,
-                maxZoom: 20,
+                maxZoom: 10,
                 id: 'mapbox/streets-v11'
             }).addTo(miMapa);
 
@@ -51,6 +51,7 @@
             	let latitud = temblores.features[x].geometry.coordinates[1];
             	let magnitud = temblores.features[x].properties.mag;
                 L.circle([latitud,longitud],{radius: Math.pow(10,magnitud),stroke:false,fillColor:'#ff0000',fillOpacity:0.4}).addTo(miMapa)
+                L.control.zoom [zoomInTitle 'Chile', zoomOutTitle 'Ver Menos']; 
             }//acá se cierra el ciclo for que va agregando circulos a miMapa
 
         }//acá se cierra el function setup de p5.js
