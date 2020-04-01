@@ -21,11 +21,11 @@
 
     <script>
         var url = "https://pomber.github.io/covid19/timeseries.json";
-        var casos, chile, argentina, brasil, peru;
+        var casos, guatemala, mexico, honduras;
         var marzo = [];
-        var marzo_chile = [];
-        var marzo_argentina = [];
-        var marzo_brasil = [];
+        var marzo_guatemala = [];
+        var marzo_mexico = [];
+        var marzo_honduras = [];
 
         function preload() {
             casos = loadJSON(url);
@@ -40,31 +40,31 @@
                 marzo.push(x);
             }
 
-            chile = casos.Chile;
-            argentina = casos.Argentina;
-            brasil = casos.Brazil;
+            guatemala = casos.Guatemala;
+            mexico = casos.México;
+            honduras = casos.Honduras;
 
-            for (let x = 0; x < chile.length; x++) {
-                if (chile[x].date.includes("-3-")) {
-                    marzo_chile.push(chile[x].confirmed);
+            for (let x = 0; x < guatemala.length; x++) {
+                if (guatemala[x].date.includes("-3-")) {
+                    marzo_guatemala.push(guatemala[x].confirmed);
                 }
             }
 
-            for (let x = 0; x < argentina.length; x++) {
-                if (argentina[x].date.includes("-3-")) {
-                    marzo_argentina.push(argentina[x].confirmed);
+            for (let x = 0; x < mexico.length; x++) {
+                if (mexico[x].date.includes("-3-")) {
+                    marzo_mexico.push(mexico[x].confirmed);
                 }
             }
 
-            for (let x = 0; x < brasil.length; x++) {
-                if (brasil[x].date.includes("-3-")) {
-                    marzo_brasil.push(brasil[x].confirmed);
+            for (let x = 0; x < honduras.length; x++) {
+                if (honduras[x].date.includes("-3-")) {
+                    marzo_honduras.push(honduras[x].confirmed);
                 }
             }
 
-            console.log(marzo_chile);
-            console.log(marzo_argentina);
-            console.log(marzo_brasil);
+            console.log(marzo_guatemala);
+            console.log(marzo_mexico);
+            console.log(marzo_honduras);
 
             /* 
             Con p5.js vamos por el JSON, creamos el canvas y también algunos arreglos con datos para visualizar. Con chart.js dibujamos en el canvas creado, aprovechando los arreglos de marzo (labels), marzo_chile, marzo_argentina y marzo_brasil (data). 
@@ -75,29 +75,29 @@
                 data: {
                     labels: marzo,
                     datasets: [{
-                        label: 'Chile',
+                        label: 'Guatemala',
                         backgroundColor: 'rgba(255, 55, 0,.1)',
                         borderColor: 'rgb(255, 55, 0)',
                         borderWidth: 2,
                         pointRadius: 2,
                         lineTension: 0,
-                        data: marzo_chile
+                        data: marzo_guatemala
                     }, {
-                        label: 'Argentina',
+                        label: 'México',
                         backgroundColor: 'rgba(75,175,245,.1)',
                         borderColor: 'rgb(75,175,245)',
                         borderWidth: 2,
                         pointRadius: 2,
                         lineTension: 0,
-                        data: marzo_argentina
+                        data: marzo_mexico
                     }, {
-                        label: 'Brasil',
+                        label: 'Honduras',
                         backgroundColor: 'rgba(22, 184, 62,.1)',
                         borderColor: 'rgb(22, 184, 62)',
                         borderWidth: 2,
                         pointRadius: 2,
                         lineTension: 0,
-                        data: marzo_brasil
+                        data: marzo_honduras
                     }]
                 },
                 options: {
