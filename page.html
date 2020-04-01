@@ -51,8 +51,8 @@
             	let latitud = temblores.features[x].geometry.coordinates[1];
             	let magnitud = temblores.features[x].properties.mag;
                 L.circle([latitud,longitud],{radius: Math.pow(10,magnitud),stroke:false,fillColor:'#FF00DC',fillOpacity:0.4}).addTo(miMapa)
-                .bindPopup (("Magnitud") + (String(magnitud))).openPopup();
-           
+                .bindPopup (String(magnitud)).openPopup();
+                .addTo(miMapa)
             }//acá se cierra el ciclo for que va agregando circulos a miMapa
 
         }//acá se cierra el function setup de p5.js
