@@ -51,10 +51,7 @@
             	let latitud = temblores.features[x].geometry.coordinates[1];
             	let magnitud = temblores.features[x].properties.mag;
                 L.circle([latitud,longitud],{radius: Math.pow(10,magnitud),stroke:false,fillColor:'#ff0000',fillOpacity:0.4}).addTo(miMapa)
-                L.control.zoom (
-                    zoomInTitle = 'Chile', 
-                    zoomOutTitle = 'Ver Menos'
-                ); 
+                
             }//acá se cierra el ciclo for que va agregando circulos a miMapa
 
         }//acá se cierra el function setup de p5.js
