@@ -50,7 +50,7 @@
             	let longitud = temblores.features[x].geometry.coordinates[0];
             	let latitud = temblores.features[x].geometry.coordinates[1];
             	let magnitud = temblores.features[x].properties.mag;
-                L.circle([latitud,longitud],{radius: Math.pow(10,magnitud),stroke:false,fillColor:'#FF00DC',fillOpacity:0.4}).addTo(miMapa)
+                L.circle([latitud,longitud],{radius: Math.pow(10,magnitud),stroke:false,fillColor:'#FF00DC',fillOpacity:0.4})
                 .bindPopup(String(magnitud)).openPopup() 
                 .addTo(miMapa); 
                 
