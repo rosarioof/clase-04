@@ -21,11 +21,11 @@
 
     <script>
         var url = "https://pomber.github.io/covid19/timeseries.json";
-        var casos, guatemala, mexico, honduras;
+        var casos, guatemala, mexico, nicaragua;
         var marzo = [];
         var marzo_guatemala = [];
         var marzo_mexico = [];
-        var marzo_honduras = [];
+        var marzo_nicaragua = [];
 
         function preload() {
             casos = loadJSON(url);
@@ -42,7 +42,7 @@
 
             guatemala = casos.Guatemala;
             mexico = casos.México;
-            honduras = casos.Honduras;
+            nicaragua = casos.Nicaragua;
 
             for (let x = 0; x < guatemala.length; x++) {
                 if (guatemala[x].date.includes("-3-")) {
@@ -56,15 +56,15 @@
                 }
             }
 
-            for (let x = 0; x < honduras.length; x++) {
-                if (honduras[x].date.includes("-3-")) {
-                    marzo_honduras.push(honduras[x].confirmed);
+            for (let x = 0; x < nicaragua.length; x++) {
+                if (nicaragua[x].date.includes("-3-")) {
+                    marzo_nicaragua.push(nicaragua[x].confirmed);
                 }
             }
 
             console.log(marzo_guatemala);
             console.log(marzo_mexico);
-            console.log(marzo_honduras);
+            console.log(marzo_nicaragua);
 
             /* 
             Con p5.js vamos por el JSON, creamos el canvas y también algunos arreglos con datos para visualizar. Con chart.js dibujamos en el canvas creado, aprovechando los arreglos de marzo (labels), marzo_chile, marzo_argentina y marzo_brasil (data). 
@@ -91,13 +91,13 @@
                         lineTension: 0,
                         data: marzo_mexico
                     }, {
-                        label: 'Honduras',
+                        label: 'Nicaragua',
                         backgroundColor: 'rgba(0, 59, 173,.1)',
                         borderColor: 'rgb(0, 59, 173)',
                         borderWidth: 2,
                         pointRadius: 2,
                         lineTension: 0,
-                        data: marzo_honduras
+                        data: marzo_nicaragua
                     }]
                 },
                 options: {
